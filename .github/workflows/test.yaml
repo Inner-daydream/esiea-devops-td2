@@ -41,6 +41,6 @@ jobs:
     needs: super-lint
     steps:
       - name: pull image
-        run: docker pull ${{ secrets.DOCKER_USERNAME }}/innerdayd:latest
+        run: docker pull ${{ secrets.DOCKER_USERNAME }}/innerdayd:latest --platform linux/amd64
       - name: run image
         run: docker run -d -p 80:80 ${{ secrets.DOCKER_USERNAME }}/innerdayd:latest
